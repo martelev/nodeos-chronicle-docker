@@ -13,9 +13,6 @@ RUN apt update && \
     mv chronicle-receiver /opt/ && \
     rm -rf ~/eos-chronicle
 
-RUN apt install -y tcpdump
-
-COPY chronicle-data /root/chronicle/chronicle-data
 COPY config.ini /root/chronicle/config.ini
 
 ENTRYPOINT sleep 5 && exec /opt/chronicle-receiver --data-dir=/root/chronicle/chronicle-data --config-dir=/root/chronicle/
